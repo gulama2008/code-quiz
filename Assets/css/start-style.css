@@ -9,3 +9,14 @@
 .intro{
     text-align: center;
 }
+
+#start {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(78, 34, 122);
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
