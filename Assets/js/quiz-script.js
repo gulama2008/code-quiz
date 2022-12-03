@@ -3,6 +3,9 @@ var timeLeft;
 var quizNumber = 0;
 var finish = false;
 var score;
+var input;
+var initial;
+
 
 //get element from html
 var timer = document.querySelector("#timer");
@@ -13,6 +16,8 @@ var optionB = document.querySelector("#optionB");
 var optionC = document.querySelector("#optionC");
 var optionD = document.querySelector("#optionD");
 var message = document.querySelector("#message");
+
+var submit;
 
 //create objects for each quiz
 var question1 = {
@@ -128,7 +133,15 @@ function regPage() {
     label.textContent = "Enter initials:";
     text.setAttribute("type", "text");
     text.setAttribute("id", "initial");
+    console.log("aaa");
+    options.removeEventListener("click", clickEvent);
+    console.log("bbb");
     submit.textContent = "submit"; 
+    console.log("ccc");
+    submit.addEventListener("click", function (event) { 
+        event.preventDefault();
+        saveInitialAndScore();
+    });
 }
 
 //function of changing to the next quiz
@@ -148,26 +161,59 @@ function nextPage() {
 } 
 
 //event of clicking one option
-options.addEventListener("click", function (event) { 
-    if (event.target.textContent == quizArray[quizNumber].correctAnswer) {
-        message.textContent = "Correct!"
-    } else { 
-        message.textContent = "Wrong!"
-        console.log(message.textContent);
-        timeLeft-=10;
-    }   
-    nextPage();
-})
+var clickEvent = function (event) {
+  if (event.target.textContent == quizArray[quizNumber].correctAnswer) {
+    message.textContent = "Correct!";
+  } else {
+    message.textContent = "Wrong!";
+    console.log(message.textContent);
+    timeLeft -= 10;
+  }
+  nextPage();
+};
+    
+options.addEventListener("click", clickEvent);
 
 //render function
 function init() { 
     timeLeft = 60;
-    timeCountDown();
     quiz.textContent = quizArray[quizNumber].content;
     optionA.textContent = quizArray[quizNumber].optionA;
     optionB.textContent = quizArray[quizNumber].optionB;
     optionC.textContent = quizArray[quizNumber].optionC;
     optionD.textContent = quizArray[quizNumber].optionD;
+    timeCountDown();   
 }
 
 init();
+
+
+
+
+ 
+
+function saveInitialAndScore() {
+   
+    input = document.querySelector("input");
+    initial = input.value;
+  if (initial == "") {
+    window.alert("Please enter your initial");
+  } else {
+        if (!localStorage.getItem("save")) {
+        var save = new Array();
+        save.push(initial + "-" + score);
+            localStorage.setItem("save", JSON.stringify(save));
+            console.log(save);
+        } else {
+            var save = JSON.parse(localStorage.getItem("save")); 
+            save.push(initial + "-" + score);
+            localStorage.setItem("save", JSON.stringify(save));
+            console.log(save);
+        }
+  }
+}
+
+//get initial and score and save it to the localstorage when clicking submit
+
+
+

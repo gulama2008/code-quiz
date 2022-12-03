@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 100px 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+li{
+    list-style: none;
+    /* margin-top: 10px; */
+    background-color: rgb(222, 204, 238);
+}
+
+button{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(78, 34, 122);
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
