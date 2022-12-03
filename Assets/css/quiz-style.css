@@ -23,6 +23,15 @@
 
 }
 
+#message{
+    width: 800px;
+    color: rgb(200, 195, 195);
+    font-size: 30px;
+    font-style: italic;
+    margin-top: 20px;
+    border-top: solid 2px rgb(200, 195, 195);
+}
+
 li{
     /* height: 50px;
     width: 200px; */
@@ -35,5 +44,18 @@ li{
     text-align: center;
     line-height: 30px;
     cursor: pointer;
+
+}
+
+.regpage{
+    margin-top: 0px;
+    padding: 0px;
+    color: black;
+    background-color: white;
+    list-style-type: none;
+
+    cursor: auto;
+    
+    border-radius: 0px;
 
 }
