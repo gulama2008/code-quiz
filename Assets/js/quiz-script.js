@@ -85,8 +85,7 @@ var question7 = {
 };
 
 var question8 = {
-  content:
-    "8. Which of the following function of String object returns the calling string value converted to lower case?",
+  content: "8. Which of the following function of String object returns the calling string value converted to lower case?",
   optionA: "toLocaleLowerCase()",
   optionB: "toLowerCase()",
   optionC: "toString()",
@@ -107,15 +106,17 @@ function timeCountDown() {
             } else {
                 timer.textContent = "Time: " + timeLeft;
             }
+            // score = timeLeft;   
         } else { 
-            clearInterval(countDown);          
-        }
-        score = timeLeft;         
+            clearInterval(countDown);   
+        }        
     }, 1000);  
 }
 
 //function of showing the finishing page
 function regPage() { 
+    timer.textContent = "Time: " + timeLeft;
+    score = timeLeft;
     var lis = document.querySelectorAll("li");
     for (i = 0; i < lis.length; i++) { 
         lis[i].textContent = "";
@@ -125,10 +126,13 @@ function regPage() {
     optionA.textContent = "Your final score is: "+score;
     var label = document.createElement("label");
     var text = document.createElement("input");
+    var anchor=document.createElement("a")
     var submit = document.createElement("button");
     optionB.appendChild(label);
     optionB.appendChild(text);
-    optionB.appendChild(submit);
+    optionB.appendChild(anchor);
+    anchor.appendChild(submit);
+    
     label.setAttribute("for", "initial");
     label.textContent = "Enter initials:";
     text.setAttribute("type", "text");
@@ -139,8 +143,8 @@ function regPage() {
     submit.textContent = "submit"; 
     console.log("ccc");
     submit.addEventListener("click", function (event) { 
-        event.preventDefault();
-        saveInitialAndScore();
+        anchor.setAttribute("href", "highscore.html");
+        saveInitialAndScore();     
     });
 }
 
@@ -150,7 +154,6 @@ function nextPage() {
     if (quizNumber == quizArray.length) {
         regPage();
         finish = true;
-        console.log(finish);
     } else {
         quiz.textContent = quizArray[quizNumber].content;
         optionA.textContent = quizArray[quizNumber].optionA;
@@ -187,13 +190,7 @@ function init() {
 
 init();
 
-
-
-
- 
-
-function saveInitialAndScore() {
-   
+function saveInitialAndScore() {  
     input = document.querySelector("input");
     initial = input.value;
   if (initial == "") {
