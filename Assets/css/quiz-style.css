@@ -1,14 +1,20 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif   
 }
 
 .header {
+    margin: 20px;
     display: flex;
     justify-content: space-between;
 }
+
+a{
+    text-decoration: none;
+    color: blueviolet;
+}
+
 #quizarea{
     margin-left: 300px;
     margin-top: 30px;
