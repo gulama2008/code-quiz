@@ -1,14 +1,20 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif   
 }
 
 .header {
+    margin: 20px;
     display: flex;
     justify-content: space-between;
 }
+
+a{
+    text-decoration: none;
+    color: blueviolet;
+}
+
 #quizarea{
     margin-left: 300px;
     margin-top: 30px;
@@ -23,6 +29,11 @@
 
 }
 
+#options{
+    display: flex;
+    flex-direction: column;
+}
+
 #message{
     width: 800px;
     color: rgb(200, 195, 195);
@@ -32,7 +43,7 @@
     border-top: solid 2px rgb(200, 195, 195);
 }
 
-li{
+button{
     /* height: 50px;
     width: 200px; */
     margin-top: 15px;
@@ -61,6 +72,6 @@ li{
 
 }
 
-li:hover{
+button:hover{
     background-color: rgb(141, 83, 195);
 }

@@ -1,11 +1,11 @@
 *{
     margin: 0px;
     padding: 0px;
-}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
 body{
-    margin: 100px 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 100px 300px;
 }
 
 h1{
