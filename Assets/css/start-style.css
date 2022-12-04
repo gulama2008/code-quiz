@@ -1,16 +1,31 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .header{
     display: flex;
     justify-content: space-between;
 }
 .intro{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-#start {
+h1{
+    margin-bottom: 20px;
+}
+
+#content{
+    width: 500px;
+}
+
+
+button {
     margin-top: 20px;
     padding: 10px;
     background-color: rgb(78, 34, 122);
@@ -19,4 +34,8 @@
     font-size: 20px;
     border: none;
     cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(141, 83, 195);
 }
