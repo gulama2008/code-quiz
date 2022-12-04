@@ -10,15 +10,15 @@
 <body>
     <header class="header">
         <div id="highscore"><a href="Assets/highscore.html" target="_blank">View Highscores</a></div>
-        <div id="timer">Time: 60</div>
+        <div id="timer"></div>
     </header>
-    <main class="result">
+    <main class="content">
         <h1>All done!</h1>
-        <div id="content">your final score</div>
+        <div id="result">your final score</div>
         <label for="initial">Enter initials: </label>
-        <input type="text" id="initial">
-        <button onclick="window.location.href='highscore.html'">Submit</button>
+        <input type="text" id="input">
+        <button id="submit">Submit</button>
     </main>
-    
+    <script src="js/result-script.js"></script>   
 </body>
 </html>

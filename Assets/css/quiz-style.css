@@ -29,6 +29,11 @@ a{
 
 }
 
+#options{
+    display: flex;
+    flex-direction: column;
+}
+
 #message{
     width: 800px;
     color: rgb(200, 195, 195);
@@ -38,7 +43,7 @@ a{
     border-top: solid 2px rgb(200, 195, 195);
 }
 
-li{
+button{
     /* height: 50px;
     width: 200px; */
     margin-top: 15px;
@@ -67,6 +72,6 @@ li{
 
 }
 
-li:hover{
+button:hover{
     background-color: rgb(141, 83, 195);
 }

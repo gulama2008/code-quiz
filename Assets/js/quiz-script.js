@@ -3,8 +3,7 @@ var timeLeft;
 var quizNumber = 0;
 var finish = false;
 var score;
-var input;
-var initial;
+
 
 
 //get element from html
@@ -103,6 +102,7 @@ function timeCountDown() {
         if (!finish) {
             if (timeLeft == 0) {
                 clearInterval(countDown);
+                addLinkToResultPage();
             } else {
                 timer.textContent = "Time: " + timeLeft;
             }
@@ -114,46 +114,28 @@ function timeCountDown() {
 }
 
 //function of showing the finishing page
-function regPage() { 
-    timer.textContent = "Time: " + timeLeft;
+function addLinkToResultPage() { 
     score = timeLeft;
-    var lis = document.querySelectorAll("li");
-    for (i = 0; i < lis.length; i++) { 
-        lis[i].textContent = "";
-        lis[i].setAttribute("class", "regpage");
+    var buttons = document.querySelectorAll("button");
+    for (i = 0; i < buttons.length; i++) { 
+        buttons[i].setAttribute("onclick","window.location.href='result.html'");
     }
-    quiz.textContent = "All done!";
-    optionA.textContent = "Your final score is: "+score;
-    var label = document.createElement("label");
-    var text = document.createElement("input");
-    var anchor=document.createElement("a")
-    var submit = document.createElement("button");
-    optionB.appendChild(label);
-    optionB.appendChild(text);
-    optionB.appendChild(anchor);
-    anchor.appendChild(submit);
-    
-    label.setAttribute("for", "initial");
-    label.textContent = "Enter initials:";
-    text.setAttribute("type", "text");
-    text.setAttribute("id", "initial");
-    console.log("aaa");
-    options.removeEventListener("click", clickEvent);
-    console.log("bbb");
-    submit.textContent = "submit"; 
-    console.log("ccc");
-    submit.addEventListener("click", function (event) { 
-        anchor.setAttribute("href", "highscore.html");
-        saveInitialAndScore();     
-    });
 }
 
 //function of changing to the next quiz
 function nextPage() { 
-    quizNumber++;
+    
     if (quizNumber == quizArray.length) {
-        regPage();
-        finish = true;
+    //   quiz.textContent = quizArray[quizNumber].content;
+    //   optionA.textContent = quizArray[quizNumber].optionA;
+    //   optionB.textContent = quizArray[quizNumber].optionB;
+    //   optionC.textContent = quizArray[quizNumber].optionC;
+    //   optionD.textContent = quizArray[quizNumber].optionD;
+      // addLinkToResultPage();
+      finish = true;
+      score = timeLeft;
+      localStorage.setItem("score", score);
+      window.location.href = "result.html";
     } else {
         quiz.textContent = quizArray[quizNumber].content;
         optionA.textContent = quizArray[quizNumber].optionA;
@@ -169,10 +151,17 @@ var clickEvent = function (event) {
     message.textContent = "Correct!";
   } else {
     message.textContent = "Wrong!";
-    console.log(message.textContent);
     timeLeft -= 10;
   }
+    
+    // if (quizNumber == quizArray.length) {
+    //   finish = true;
+    //   score = timeLeft;
+    //   localStorage.setItem("score", score);
+    // } 
+    quizNumber++;
   nextPage();
+  
 };
     
 options.addEventListener("click", clickEvent);
@@ -190,25 +179,7 @@ function init() {
 
 init();
 
-function saveInitialAndScore() {  
-    input = document.querySelector("input");
-    initial = input.value;
-  if (initial == "") {
-    window.alert("Please enter your initial");
-  } else {
-        if (!localStorage.getItem("save")) {
-        var save = new Array();
-        save.push(initial + "-" + score);
-            localStorage.setItem("save", JSON.stringify(save));
-            console.log(save);
-        } else {
-            var save = JSON.parse(localStorage.getItem("save")); 
-            save.push(initial + "-" + score);
-            localStorage.setItem("save", JSON.stringify(save));
-            console.log(save);
-        }
-  }
-}
+
 
 //get initial and score and save it to the localstorage when clicking submit
 
