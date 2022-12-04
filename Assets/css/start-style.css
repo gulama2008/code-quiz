@@ -15,8 +15,7 @@ a {
     color: blueviolet;
 }
 
-.intro{
-    
+.intro{   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +30,6 @@ h1{
 #content{
     width: 500px;
 }
-
 
 button {
     margin-top: 20px;

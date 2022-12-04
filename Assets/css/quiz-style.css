@@ -26,7 +26,6 @@ a{
 #quiz{
     font-size: 25px;
     font-weight: bold;
-
 }
 
 #options{
@@ -44,8 +43,6 @@ a{
 }
 
 button{
-    /* height: 50px;
-    width: 200px; */
     margin-top: 15px;
     padding: 10px;
     color: white ;
@@ -54,22 +51,8 @@ button{
     font-size: 20px;
     text-align: center;
     line-height: 30px;
+    border: none;
     cursor: pointer;
-
-}
-
-.regpage{
-    margin-top: 0px;
-    padding: 0px;
-    color: black;
-    background-color: white;
-    list-style-type: none;
-
-    cursor: auto;
-    
-    border-radius: 0px;
-    
-
 }
 
 button:hover{
