@@ -168,7 +168,7 @@ options.addEventListener("click", clickEvent);
 
 //render function
 function init() { 
-    timeLeft = 60;
+    timeLeft = 10;
     quiz.textContent = quizArray[quizNumber].content;
     optionA.textContent = quizArray[quizNumber].optionA;
     optionB.textContent = quizArray[quizNumber].optionB;
