@@ -39,14 +39,17 @@ var question3 = {
   optionD: "if (i==5)",
   correctAnswer: "if (i==5)",
 };
+
 var question4 = {
-  content: "4. Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
-  optionA: "Position",
-  optionB: "Window",
-  optionC: "Standard",
-  optionD: "Location",
-  correctAnswer: "Window",
+  content:
+    "4. Which of the following function of String object returns the characters in a string between two indexes into the string?",
+  optionA: "slice()",
+  optionB: "split()",
+  optionC: "substr()",
+  optionD: "substring()",
+  correctAnswer: "substring()",
 };
+
 var question5 = {
   content: "5. Which of the following is true about variable naming conventions in JavaScript?",
   optionA: "JavaScript variable names must begin with a letter or the underscore character",
@@ -55,6 +58,7 @@ var question5 = {
   optionD: "None of the above",
   correctAnswer: "Both of the above",
 };
+
 var question6 = {
   content: "6. Which built-in method adds one or more elements to the end of an array and returns the new length of the array?",
   optionA: "last()",
@@ -63,26 +67,9 @@ var question6 = {
   optionD: "None of the above",
   correctAnswer: "push()",
 };
-var question7 = {
-  content:
-    "7. Which of the following function of String object returns the characters in a string between two indexes into the string?",
-  optionA: "slice()",
-  optionB: "split()",
-  optionC: "substr()",
-  optionD: "substring()",
-  correctAnswer: "substring()",
-};
-var question8 = {
-  content: "8. Which of the following function of String object returns the calling string value converted to lower case?",
-  optionA: "toLocaleLowerCase()",
-  optionB: "toLowerCase()",
-  optionC: "toString()",
-  optionD: "substring()",
-  correctAnswer: "toLowerCase()",
-};
 
 //create array for the quiz objects
-var quizArray = [question1, question2, question3,question4,question5,question6,question7,question8]
+var quizArray = [question1, question2, question3,question4,question5,question6]
 
 //initial function
 function init() { 
