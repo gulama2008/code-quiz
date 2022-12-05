@@ -100,9 +100,9 @@ function timeCountDown() {
     var countDown = setInterval(function () {
         timeLeft--;
         if (!finish) {
-            if (timeLeft == 0) {
-                clearInterval(countDown);
-                addLinkToResultPage();
+            if (timeLeft <= 0) {
+              clearInterval(countDown);
+              timer.textContent = "Time: 0";
             } else {
                 timer.textContent = "Time: " + timeLeft;
             }
@@ -135,7 +135,14 @@ var clickEvent = function (event) {
         message.textContent = "Correct!";
     } else {
         message.textContent = "Wrong!";
+      if (timeLeft >= 10) {
         timeLeft -= 10;
+        console.log("bbb");
+      } else { 
+        console.log("aaa")
+        timeLeft = 0;
+        console.log(timeLeft);
+      }   
     }
     quizNumber++;
     nextPage();
